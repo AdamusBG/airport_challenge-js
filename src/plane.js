@@ -3,7 +3,7 @@ class Plane{
     this.airport = airport;
   };
 
-  is_at_airport() {
+  at_airport() {
     if (this.airport == -1) {
       return false;
     } else {
@@ -14,7 +14,11 @@ class Plane{
   land(airport) {
     if (this.airport != -1) {
       throw new Error("This plane is already at an airport");
-    } else { //note to add in extr aonditionals for airport having no space or bad weather
+    } else if (!airport.has_space()) {
+      throw new Error("This plane cannot land at that airport as the airport is full");
+    } else if (!airport.good_weather()) {
+      throw new Error("This plane cannot land at that airport due to bad weather");
+    } else {
       this.airport = airport;
     }
   };
@@ -46,11 +50,5 @@ class Plane{
 //     raise StandardError.new "The plane cannot take off from this airport because of stormy weather" unless airport.good_weather?
 //
 //     @landed_at = -1
-//   end
-//
-//   def at_airport?(airport)
-//     return false unless @landed_at == airport
-//
-//     return true
 //   end
 // end

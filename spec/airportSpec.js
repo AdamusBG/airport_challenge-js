@@ -13,11 +13,15 @@ describe("Airport", function() {
     expect(ap.planes_in_hangar.length).toEqual(1);
   })
 
-  it("will return false when .has_space called and 20 planes in hangar, after default setup", function() {
+  it("Will return false when .has_space called and 20 planes in hangar, after default setup", function() {
     for (var i = 0; i < 20; i++) {
       ap.land_plane("a plane");
     };
     expect(ap.has_space()).toEqual(false);
   });
-  
+
+  it("Will randomly return a boolean when .good_weather called", function() {
+    expect(ap.good_weather()).toBeInstanceOf(Boolean);
+  });
+
 });
