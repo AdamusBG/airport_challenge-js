@@ -112,4 +112,11 @@ describe("Plane", function() {
     my_plane.take_off(airportSpaceGoodWeather);
     expect(my_plane.airport).toEqual(-1);
   })
+
+  it("take off in bad weather will throw and error", function(){
+    my_stormy_plane = new Plane(airportSpaceBadWeather)
+    expect(function() {
+      my_stormy_plane.take_off(airportSpaceBadWeather);
+    }).toThrow(new Error("The plane cannot take off from this airport because of stormy weather"));
+  })
 });
