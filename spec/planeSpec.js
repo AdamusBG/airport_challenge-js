@@ -20,4 +20,22 @@ describe("Plane", function() {
     }).toThrow(new Error("This plane is already at an airport"));
   })
 
+  it("Throws an error when asked to take_off, but already taken off", function() {
+    expect(function() {
+      my_plane.take_off("another airport");
+    }).toThrow(new Error("This plane cannot take off as it is not at an airport"));
+  })
+
+  it("Throws an error when asked to take_off, from an incorrect airport", function() {
+    my_plane.land('airport');
+    expect(function() {
+      my_plane.take_off("another airport");
+    }).toThrow(new Error("The pane can't take off from an airport that it is not at"));
+  })
+
+  it("succesful take off leads to airport = -1", function() {
+    my_plane.land('airport');
+    my_plane.take_off('airport');
+    expect(my_plane.airport).toEqual(-1);
+  })
 });

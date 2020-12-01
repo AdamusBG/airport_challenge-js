@@ -19,6 +19,15 @@ class Plane{
     }
   };
 
+  take_off(airport) {
+    if (this.airport == -1) {
+      throw new Error("This plane cannot take off as it is not at an airport");
+    } else if (this.airport != airport) {
+      throw new Error("The pane can't take off from an airport that it is not at");
+    } else {
+      this.airport = -1;
+    }
+  }
 };
 
 
@@ -29,14 +38,7 @@ class Plane{
 //     @landed_at = airport # nb that we will consider the value of -1 to mean the airport is in flight
 //   end
 //
-//   def land(airport)
-//     raise StandardError.new "This plane is already at an airport" if @landed_at != -1
-//     raise StandardError.new "The plane cannot be landed at this airport because of stormy weather" unless airport.good_weather?
 //
-//     raise StandardError.new "The plane cannot be landed at this airport because the airport is full" unless airport.space?
-//
-//     @landed_at = airport unless @landed_at != -1
-//   end
 //
 //   def take_off(airport)
 //     raise StandardError.new "This plane cannot take off as it is not at an airport" if @landed_at == -1
