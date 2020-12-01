@@ -10,7 +10,15 @@ class Plane{
       return true;
     }
   };
-  
+
+  land(airport) {
+    if (this.airport != -1) {
+      throw new Error("This plane is already at an airport");
+    } else { //note to add in extr aonditionals for airport having no space or bad weather
+      this.airport = airport;
+    }
+  };
+
 };
 
 
