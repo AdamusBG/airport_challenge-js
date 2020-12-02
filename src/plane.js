@@ -29,6 +29,8 @@ class Plane{
       throw new Error("This plane cannot take off as it is not at an airport");
     } else if (this.airport != airport) {
       throw new Error("The pane can't take off from an airport that it is not at");
+    } else if (!airport.good_weather()) {
+      throw new Error("The plane cannot take off from this airport because of stormy weather");
     } else {
       this.airport = -1;
     }
