@@ -33,6 +33,7 @@ class Plane{
       throw new Error("The plane cannot take off from this airport because of stormy weather");
     } else {
       this.airport = -1;
+      airport.takeoff_plane(this);
     }
   }
 };

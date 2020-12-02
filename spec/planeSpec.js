@@ -5,7 +5,7 @@ describe("Plane", function() {
     // mock objects
     airportSpaceGoodWeather = jasmine.createSpyObj(
       "Airport",
-      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane"],
+      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane", "takeoff_plane"],
       {
         planes_in_hangar: [],
         capacity: 20,
@@ -20,7 +20,7 @@ describe("Plane", function() {
 
     airportSpaceGoodWeather2 = jasmine.createSpyObj(
       "Airport",
-      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane"],
+      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane", "takeoff_plane"],
       {
         planes_in_hangar: [],
         capacity: 20,
@@ -35,7 +35,7 @@ describe("Plane", function() {
 
     airportNoSpaceGoodWeather = jasmine.createSpyObj(
       "Airport",
-      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane"],
+      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane", "takeoff_plane"],
       {
         planes_in_hangar: [],
         capacity: 20,
@@ -50,7 +50,7 @@ describe("Plane", function() {
 
     airportSpaceBadWeather = jasmine.createSpyObj(
       "Airport",
-      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane"],
+      ["planes_in_hangar", "capacity", "has_space", "good_weather", "land_plane", "takeoff_plane"],
       {
         planes_in_hangar: [],
         capacity: 20,

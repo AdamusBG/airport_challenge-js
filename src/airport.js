@@ -16,6 +16,13 @@ class Airport {
     this.planes_in_hangar.push(plane);
   };
 
+  takeoff_plane(plane) {
+    const index = this.planes_in_hangar.indexOf(plane);
+    if (index > -1) {
+      this.planes_in_hangar.splice(index, 1);
+    }
+  };
+
   good_weather() {
     var roll = Math.floor(Math.random() * 20);
     if (roll == 0) {

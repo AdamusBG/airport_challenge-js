@@ -13,6 +13,12 @@ describe("Airport", function() {
     expect(ap.planes_in_hangar.length).toEqual(1);
   })
 
+  it("Will have object removed from the hangar after .takeoff called", function() {
+    ap.land_plane("totally a plane");
+    ap.takeoff_plane("totally a plane");
+    expect(ap.planes_in_hangar.length).toEqual(0); 
+  })
+
   it("Will return false when .has_space called and 20 planes in hangar, after default setup", function() {
     for (var i = 0; i < 20; i++) {
       ap.land_plane("a plane");
