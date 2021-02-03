@@ -42,9 +42,17 @@ I want to prevent landing when weather is stormy
 
 ## Information
 
-The program will need to be run in a REPL to test, see the featureSpec file for guidance on how this would work.  
-
 Edge cases considered:  
 * Planes will not be able to take off from an airport that they are not currently in  
 * Planes will not be able to take off when already in flight  
 * Planes cannot land at an airport if they are already at an airport  
+
+If you would like to run the tests covering the above edge cases, as well as the normal behaviour of the program, open a terminal and navigate to a directory in whihc you would like to save this repository, then follow the below.  
+
+```
+$ git clone https://github.com/AdamusBG/airport_challenge-js.git
+$ cd airport_challenge-js
+$ open SpecRunner.html
+```
+
+This will then open a browser window in which you can see the Jasmine test results.
