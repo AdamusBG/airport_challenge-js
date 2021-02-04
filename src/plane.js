@@ -12,7 +12,7 @@ class Plane{
   };
 
   land(airport) {
-    if (this.airport != -1) {
+    if (this.at_airport()) {
       throw new Error("This plane is already at an airport");
     } else if (!airport.has_space()) {
       throw new Error("This plane cannot land at that airport as the airport is full");
@@ -25,7 +25,7 @@ class Plane{
   };
 
   take_off(airport) {
-    if (this.airport == -1) {
+    if (!this.at_airport()) {
       throw new Error("This plane cannot take off as it is not at an airport");
     } else if (this.airport != airport) {
       throw new Error("The pane can't take off from an airport that it is not at");
