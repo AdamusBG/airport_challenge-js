@@ -46,6 +46,7 @@ Edge cases considered:
 * Planes will not be able to take off from an airport that they are not currently in  
 * Planes will not be able to take off when already in flight  
 * Planes cannot land at an airport if they are already at an airport  
+* Planes can neither land nor take off from an airport with bad weather (randomly chosen)  
 
 If you would like to run the tests covering the above edge cases, as well as the normal behaviour of the program, open a terminal and navigate to a directory in whihc you would like to save this repository, then follow the below.  
 
